@@ -2748,13 +2748,13 @@ DEFINE_PARAM_PARSER(ParameterManager::ParseLibPaths)
             aPM->iLibPathList.push_back(aPathList);
             return;
         }
-        string tmp(aPathList.substr(0, pos));
+        string tmp(aPathList.substr(0, pos + 1));
         while(tmp.back()==directoryseparator)
         {
             tmp.pop_back();
         }
         aPM->iLibPathList.push_back(tmp);
-        aPathList.erase(0, pos);
+        aPathList.erase(0, pos + 1);
     }
 }
 
